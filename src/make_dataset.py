@@ -15,11 +15,7 @@ import os
 plt.style.use('default')
 
 def read_file_csv(filename):
-    # Obtener la ruta absoluta de la raíz del proyecto
-    root_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-    
-    # Definir la ruta completa del archivo CSV
-    file_path = os.path.join(root_path, 'data/raw', filename)
+    file_path = os.path.join('data/raw', filename)
     
     # Cargar el archivo CSV
     df = pd.read_csv(file_path).set_index('ID')
