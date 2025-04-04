@@ -22,12 +22,9 @@ def clean_column_names(df):
 
 # Función para cargar y preparar la tabla transformada
 def read_file_csv(train_filename, test_filename):
-    # Obtener la ruta absoluta de la raíz del proyecto
-    root_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-    
-    # Definir las rutas completas para los archivos CSV
-    train_file_path = os.path.join(root_path, 'data/processed', train_filename)
-    test_file_path = os.path.join(root_path, 'data/processed', test_filename)
+     # Ruta relativa a los archivos CSV
+    train_file_path = os.path.join('data/processed', 'train.csv')
+    test_file_path = os.path.join('data/processed', 'test.csv')
     
     # Cargar los archivos CSV
     train_full = pd.read_csv(train_file_path).set_index('ID')
